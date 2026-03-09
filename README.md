@@ -35,7 +35,7 @@
 </p>
 
 <p align="center">
-  C<sup>2</sup>-Explorer is a <strong><em>decentralized</em></strong> multi-UAV exploration framework that enhance the <strong><em>flexibility</em></strong> and <strong><em>contiguity</em></strong> of task allocation.
+  C<sup>2</sup>-Explorer is a <strong><em>decentralized</em></strong> multi-UAV exploration framework to enhance <strong><em>flexible</em></strong> and <strong><em>contiguous</em></strong> task allocation.
 </p>
 
 ## Motivations and Contributions
