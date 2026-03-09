@@ -1,6 +1,6 @@
 <div align="center">
   <h1>
-    <img src="assets/img/logo.jpg" alt="C2-Explorer Logo" width="65"/> C<sup>2</sup>-Explorer
+    <img src="assets/img/logo.png" alt="C2-Explorer Logo" width="60"/> C<sup>2</sup>-Explorer
 
   </h1>
   <h2>Contiguity-Driven Task Allocation with Connectivity-Aware Task Representation for Decentralized Multi-UAV Exploration</h2>
@@ -32,14 +32,6 @@
 <br/>
 <p align="center">
   <img src="assets/img/cover.jpg" width="100%"/>
-</p>
-
-## System Overview
-
-Code and detailed documentation will be released soon.
-
-<p align="center">
-  <img src="assets/img/system_overview.jpg" width="80%"/>
 </p>
 
 ## Real-World Experiments
