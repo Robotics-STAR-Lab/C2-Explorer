@@ -1,6 +1,7 @@
 <div align="center">
   <h1>
-    C<sup>2</sup>-Explorer
+    <img src="assets/img/logo.jpg" alt="C2-Explorer Logo" width="65"/> C<sup>2</sup>-Explorer
+
   </h1>
   <h2>Contiguity-Driven Task Allocation with Connectivity-Aware Task Representation for Decentralized Multi-UAV Exploration</h2>
   <!-- <strong>
@@ -28,12 +29,23 @@
   <img alt="Project Page" src="https://img.shields.io/badge/Project_Page-Coming_Soon-lightgrey"/>
 </div>
 
+<br/>
+<p align="center">
+  <img src="assets/img/cover.jpg" width="100%"/>
+</p>
+
 ## System Overview
 
 Code and detailed documentation will be released soon.
 
 <p align="center">
   <img src="assets/img/system_overview.jpg" width="80%"/>
+</p>
+
+## Real-World Experiments
+
+<p align="center">
+  <img src="assets/video/real-world.gif" width="80%"/>
 </p>
 
 ## Motivations and Contributions
@@ -46,12 +58,6 @@ Code and detailed documentation will be released soon.
 
 <p align="center">
   <img src="assets/video/bmk.gif" width="80%"/>
-</p>
-
-## Real-World Experiments
-
-<p align="center">
-  <img src="assets/video/real-world.gif" width="80%"/>
 </p>
 
 <!-- ## Citation 📜
