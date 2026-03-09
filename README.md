@@ -7,30 +7,19 @@
     Research Project / Preprint
   </strong> -->
   <!-- <br> -->
-  <p style="margin: 0.15em 0 0.05em 0; line-height: 1.5;">
+  <p align="center">
     Xinlu Yan<sup>1,*</sup>,
-    <a href="https://zager-zhang.github.io" target="_blank">Mingjie Zhang
-    </a><sup>2,3,*</sup>,
+    <a href="https://zager-zhang.github.io" target="_blank">Mingjie Zhang</a><sup>2,3,*</sup>,
     Yuhao Fang<sup>1</sup>,
-    Yanke Sun<sup>1</sup>
-  </p>
-  <p style="margin: 0.05em 0 0.3em 0; line-height: 1.5;">
+    Yanke Sun<sup>1</sup><br/>
     <a href="https://personal.hkust-gz.edu.cn/junma/people-page.html" target="_blank">Jun Ma</a><sup>2</sup>,
     <a href="https://homepage.hit.edu.cn/youmingong" target="_blank">Youmin Gong</a><sup>1</sup>,
     <a href="https://robotics-star.com/people" target="_blank">Boyu Zhou</a><sup>3,†</sup>,
-    <a href="https://homepage.hit.edu.cn/meijie" target="_blank">Jie Mei</a><sup>1,†</sup>
-  </p>
-
-  <p style="margin: 0.05em 0 0.3em 0; line-height: 1.5;">
-    <sup>1</sup> Harbin Institute of Technology, Shenzhen.
-    <br>
-    <sup>2</sup> The Hong Kong University of Science and Technology (Guangzhou).
-    <br>
-    <sup>3</sup> Southern University of Science and Technology.
-  </p>
-  <p>
-    <sup>*</sup> Equal Contribution &nbsp;&nbsp;
-    <sup>†</sup> Co-corresponding Authors
+    <a href="https://homepage.hit.edu.cn/meijie" target="_blank">Jie Mei</a><sup>1,†</sup><br/>
+    <sup>1</sup> Harbin Institute of Technology, Shenzhen.<br/>
+    <sup>2</sup> The Hong Kong University of Science and Technology (Guangzhou).<br/>
+    <sup>3</sup> Southern University of Science and Technology.<br/>
+    <sup>*</sup> Equal Contribution &nbsp;&nbsp; <sup>†</sup> Co-corresponding Authors
   </p>
   <img alt="Paper" src="https://img.shields.io/badge/Paper-Coming_Soon-lightgrey"/>
   <a href="https://www.bilibili.com/video/BV1U5N3zgE4p/?share_source=copy_web&amp;vd_source=1801a551da967e1db6162c2de1380d70" target="_blank">
