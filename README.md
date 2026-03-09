@@ -23,9 +23,7 @@
     <sup>*</sup> Equal Contribution &nbsp;&nbsp; <sup>†</sup> Co-corresponding Authors
   </p>
   <img alt="Paper" src="https://img.shields.io/badge/Paper-Coming_Soon-lightgrey"/>
-  <a href="https://www.bilibili.com/video/BV1U5N3zgE4p/?share_source=copy_web&amp;vd_source=1801a551da967e1db6162c2de1380d70" target="_blank">
-    <img alt="Video" src="https://img.shields.io/badge/Video-Bilibili-FB7299?logo=bilibili&amp;logoColor=white"/>
-  </a>
+  <a href="https://www.bilibili.com/video/BV1U5N3zgE4p/?share_source=copy_web&amp;vd_source=1801a551da967e1db6162c2de1380d70" target="_blank"><img alt="Video" src="https://img.shields.io/badge/Video-Bilibili-FB7299?logo=bilibili&amp;logoColor=white"/></a>
   <img alt="Project Page" src="https://img.shields.io/badge/Project_Page-Coming_Soon-lightgrey"/>
 </div>
 
