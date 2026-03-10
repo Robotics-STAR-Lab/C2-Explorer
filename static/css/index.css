@@ -515,7 +515,7 @@ body {
   border-color: #228B22;
 }
 
-.slider-pagination .slider-page.slider-page-label[data-label="K-Building"].is-active {
+.slider-pagination .slider-page.slider-page-label[data-label="Building"].is-active {
   background: #4682B4;
   border-color: #4682B4;
 }
