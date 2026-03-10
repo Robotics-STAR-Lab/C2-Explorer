@@ -231,6 +231,31 @@ body {
   outline: none !important;
 }
 
+/* Lab logos on cover */
+.lab-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 1.5rem;
+}
+
+.lab-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.lab-logo-maslab {
+  height: 70px;
+}
+
+.lab-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 .hero-body {
   padding: 4rem 1.5rem;
 }
