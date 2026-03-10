@@ -22,12 +22,13 @@
     <sup>3</sup> Southern University of Science and Technology.<br/>
     <sup>*</sup> Equal Contribution &nbsp;&nbsp; <sup>†</sup> Co-corresponding Authors
   </p>
-  <img alt="Paper" src="https://img.shields.io/badge/Paper-Coming_Soon-lightgrey"/>
+  <a href="https://arxiv.org/abs/2603.07699" target="_blank"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white"/></a>
   <a href="https://www.bilibili.com/video/BV1U5N3zgE4p/?share_source=copy_web&amp;vd_source=1801a551da967e1db6162c2de1380d70" target="_blank"><img alt="Video" src="https://img.shields.io/badge/Video-Bilibili-FB7299?logo=bilibili&amp;logoColor=white"/></a>
   <img alt="Project Page" src="https://img.shields.io/badge/Project_Page-Coming_Soon-lightgrey"/>
+  <br/>
+  <p><em>Code will be released upon acceptance.</em></p>
 </div>
 
-<br/>
 <p align="center">
   <img src="assets/img/cover.jpg" width="100%"/>
 </p>
@@ -54,13 +55,16 @@
   <img src="assets/video/bmk.gif" width="80%"/>
 </p>
 
-<!-- ## Citation 📜
+## Citation 📜
 
 ```bibtex
-@article{yan2026c2explorer,
-  title={Contiguity-Driven Task Allocation with Connectivity-Aware Task Representation for Decentralized Multi-UAV Exploration},
-  author={Yan, Xinlu and Zhang, Mingjie and Fang, Yuhao and Sun, Yanke and Ma, Jun and Gong, Youmin and Zhou, Boyu and Mei, Jie},
-  journal={arXiv preprint},
-  year={2026}
+@misc{yan2026c2explorer,
+      title={C$^2$-Explorer: Contiguity-Driven Task Allocation with Connectivity-Aware Task Representation for Decentralized Multi-UAV Exploration}, 
+      author={Xinlu Yan and Mingjie Zhang and Yuhao Fang and Yanke Sun and Jun Ma and Youmin Gong and Boyu Zhou and Jie Mei},
+      year={2026},
+      eprint={2603.07699},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2603.07699}, 
 }
-``` -->
+```
