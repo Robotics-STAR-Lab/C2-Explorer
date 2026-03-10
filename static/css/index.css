@@ -123,14 +123,14 @@ body {
 .hero-cover-bg-1 {
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(30, 41, 59, 0.58)),
-    url('../images/cover_forest.jpg');
+    url('../images/cover_forest.png');
   animation: coverFade 20s ease-in-out infinite;
 }
 
 .hero-cover-bg-2 {
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(30, 41, 59, 0.58)),
-    url('../images/cover_building.jpg');
+    url('../images/cover_building.png');
   animation: coverFade 20s ease-in-out infinite;
   animation-delay: -10s;
 }
