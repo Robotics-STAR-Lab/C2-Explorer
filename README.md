@@ -12,14 +12,14 @@
     Xinlu Yan<sup>1,*</sup>,
     <a href="https://zager-zhang.github.io" target="_blank">Mingjie Zhang</a><sup>2,3,*</sup>,
     Yuhao Fang<sup>1</sup>,
-    Yanke Sun<sup>1</sup>
+    Yanke Sun<sup>1</sup>,
     <a href="https://personal.hkust-gz.edu.cn/junma/people-page.html" target="_blank">Jun Ma</a><sup>2</sup>,
     <a href="https://homepage.hit.edu.cn/youmingong" target="_blank">Youmin Gong</a><sup>1</sup>,
     <a href="https://robotics-star.com/people" target="_blank">Boyu Zhou</a><sup>3,†</sup>,
     <a href="https://homepage.hit.edu.cn/meijie" target="_blank">Jie Mei</a><sup>1,†</sup><br/><sub>&nbsp;</sub><br/>
-    <sup>1</sup> Harbin Institute of Technology, Shenzhen.<br/>
-    <sup>2</sup> The Hong Kong University of Science and Technology (Guangzhou).<br/>
-    <sup>3</sup> Southern University of Science and Technology.<br/>
+    <sup>1</sup> Harbin Institute of Technology, Shenzhen<br/>
+    <sup>2</sup> The Hong Kong University of Science and Technology (Guangzhou)<br/>
+    <sup>3</sup> Southern University of Science and Technology<br/>
     <sup>*</sup> Equal Contribution &nbsp;&nbsp; <sup>†</sup> Co-corresponding Authors
   </p>
   <a href="https://arxiv.org/abs/2603.07699" target="_blank"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white"/></a>
