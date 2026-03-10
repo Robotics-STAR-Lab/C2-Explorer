@@ -24,7 +24,7 @@
   </p>
   <a href="https://arxiv.org/abs/2603.07699" target="_blank"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white"/></a>
   <a href="https://www.bilibili.com/video/BV1U5N3zgE4p/?share_source=copy_web&amp;vd_source=1801a551da967e1db6162c2de1380d70" target="_blank"><img alt="Video" src="https://img.shields.io/badge/Video-Bilibili-FB7299?logo=bilibili&amp;logoColor=white"/></a>
-  <img alt="Project Page" src="https://img.shields.io/badge/Project_Page-Coming_Soon-lightgrey"/>
+  <a href="https://robotics-star.com/C2-Explorer/" target="_blank"><img alt="Project Page" src="https://img.shields.io/badge/Project_Page-Website-4A90E2?logo=googlechrome&logoColor=white"/></a>
   <br/>
   <p><em>Code will be released upon acceptance.</em></p>
 </div>
