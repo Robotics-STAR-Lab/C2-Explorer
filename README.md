@@ -1,2 +1,6 @@
-# C2-Explorer
-Contiguity-Driven Task Allocation with Connectivity-Aware Task Representation for Decentralized Multi-UAV Exploration
+<picture>
+  <img
+    alt="Star History"
+    src="https://api.star-history.com/svg?repos=Robotics-STAR-Lab/C2-Explorer&type=Date"
+  />
+</picture>
