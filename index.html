@@ -189,6 +189,8 @@
 
   <main id="main-content">
   <section class="hero hero-cover">
+    <div class="hero-cover-bg hero-cover-bg-1"></div>
+    <div class="hero-cover-bg hero-cover-bg-2"></div>
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -228,7 +230,7 @@
               </span>
 
               <span class="link-block">
-                <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                <a href="https://github.com/Robotics-STAR-Lab/C2-Explorer" target="_blank"
                 class="external-link button is-normal is-rounded is-dark btn-code">
                 <span class="icon">
                   <i class="fab fa-github"></i>
@@ -259,15 +261,15 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <p class="teaser-intro has-text-centered">
-        We proposed <strong><em>C<sup>2</sup>-Explorer</em></strong>, a <strong><em>decentralized</em></strong> multi-UAV exploration framework that enhances the <strong><em>flexibility</em></strong> and <strong><em>contiguity</em></strong> of task allocation strategy. By integrating connectivity-aware task representation with contiguity-driven allocation, it decomposes disconnected unknown regions into independent task units and enables more efficient, communication-limited multi-UAV exploration with reduced cross-region detours.
+        We propose <strong><em>C<sup>2</sup>-Explorer</em></strong>, a <strong>decentralized</strong> multi-UAV exploration framework that enhances the <strong>flexibility</strong> and <strong>contiguity</strong> of task allocation strategy. By integrating connectivity-aware task representation with contiguity-driven allocation, it decomposes disconnected unknown regions into independent task units and enables more efficient, communication-limited multi-UAV exploration with reduced cross-region detours.
       </p>
       <div class="carousel results-carousel teaser-video-carousel">
-        <div class="item teaser-video-item">
+        <div class="item teaser-video-item" data-label="Forest">
           <video controls muted loop playsinline preload="metadata">
             <source src="static/videos/forest_web.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item teaser-video-item">
+        <div class="item teaser-video-item" data-label="K-Building">
           <video controls muted loop playsinline preload="metadata">
             <source src="static/videos/kbuilding_web.mp4" type="video/mp4">
           </video>
@@ -296,122 +298,20 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
 
 
 
 
 
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
 
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+
+
+
+
+
+
+
 
 
 
@@ -425,12 +325,14 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@misc{yan2026c2explorer,
+      title={C$^2$-Explorer: Contiguity-Driven Task Allocation with Connectivity-Aware Task Representation for Decentralized Multi-UAV Exploration}, 
+      author={Xinlu Yan and Mingjie Zhang and Yuhao Fang and Yanke Sun and Jun Ma and Youmin Gong and Boyu Zhou and Jie Mei},
+      year={2026},
+      eprint={2603.07699},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2603.07699}, 
 }</code></pre>
     </div>
 </section>

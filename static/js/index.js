@@ -116,6 +116,22 @@ function setupTeaserVideoCarousel(teaserInstances) {
     if (initialVideo) {
         initialVideo.play().catch(() => {});
     }
+
+    // Replace pagination dots with text labels from data-label attributes
+    const paginationContainer = teaserRoot.closest('.hero-body')
+        ? teaserRoot.parentElement.querySelector('.slider-pagination')
+        : teaserRoot.querySelector('.slider-pagination');
+    if (!paginationContainer) return;
+
+    const pages = paginationContainer.querySelectorAll('.slider-page');
+    const items = teaserRoot.querySelectorAll('.item[data-label]');
+    pages.forEach(function(page, i) {
+        if (items[i] && items[i].dataset.label) {
+            page.textContent = items[i].dataset.label;
+            page.classList.add('slider-page-label');
+            page.dataset.label = items[i].dataset.label;
+        }
+    });
 }
 
 // Keep hero button highlight for 5s after click, then restore.
