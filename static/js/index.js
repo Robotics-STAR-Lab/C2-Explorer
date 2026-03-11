@@ -36,6 +36,34 @@ function copyBibTeX() {
     }
 }
 
+// Benchmark scene switcher
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.bmk-tab');
+  const videos = {
+    ours:  document.getElementById('bmk-ours'),
+    racer: document.getElementById('bmk-racer'),
+    fame:  document.getElementById('bmk-fame'),
+  };
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+
+      const scene = tab.dataset.scene;
+      const map = { ours: 'OURS', racer: 'RACER', fame: 'FAME' };
+
+      Object.keys(videos).forEach(function (key) {
+        const v = videos[key];
+        const src = 'static/videos/bmk/' + map[key] + '_' + scene + '.mp4';
+        v.querySelector('source').src = src;
+        v.load();
+        v.play();
+      });
+    });
+  });
+});
+
 // Motivation video modal
 function openMotivVideo(src) {
   const modal = document.getElementById('motiv-video-modal');

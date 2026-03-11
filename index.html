@@ -377,11 +377,34 @@
 <!-- Benchmark Comparison -->
 <section class="section" id="benchmark">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Benchmark Comparison</h2>
-        <div class="content has-text-justified">
-        </div>
+    <h2 class="title is-3 has-text-centered">Benchmark Comparison</h2>
+
+    <!-- Scene selector -->
+    <div class="bmk-tabs">
+      <button class="bmk-tab is-active" data-scene="CUBICLE">Cubicle Office</button>
+      <button class="bmk-tab" data-scene="OPEN">Open-Plan Office</button>
+      <button class="bmk-tab" data-scene="MAZE">Octa Maze</button>
+    </div>
+
+    <!-- Video grid -->
+    <div class="bmk-grid">
+      <div class="bmk-col">
+        <p class="bmk-label bmk-label-ours">C<sup>2</sup>-Explorer</p>
+        <video class="bmk-video" id="bmk-ours" autoplay muted loop playsinline>
+          <source src="static/videos/bmk/OURS_CUBICLE.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="bmk-col">
+        <p class="bmk-label bmk-label-racer">RACER</p>
+        <video class="bmk-video" id="bmk-racer" autoplay muted loop playsinline>
+          <source src="static/videos/bmk/RACER_CUBICLE.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="bmk-col">
+        <p class="bmk-label bmk-label-fame">FAME</p>
+        <video class="bmk-video" id="bmk-fame" autoplay muted loop playsinline>
+          <source src="static/videos/bmk/FAME_CUBICLE.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>

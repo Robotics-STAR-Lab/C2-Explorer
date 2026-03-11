@@ -574,6 +574,86 @@ body {
 
 /* end contribution video modal */
 
+/* ── Benchmark Comparison ── */
+.bmk-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.bmk-tab {
+  padding: 0.5rem 1.3rem;
+  border: 2px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.bmk-tab:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.bmk-tab.is-active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.bmk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .bmk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bmk-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bmk-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 !important;
+}
+
+.bmk-label-ours {
+  color: var(--primary-color);
+}
+
+.bmk-label-racer {
+  color: #FFA500;
+}
+
+.bmk-label-fame {
+  color: #FFD700;
+}
+
+.bmk-video {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  background: #000;
+  display: block;
+}
+/* ── end Benchmark Comparison ── */
+
 .publication-banner {
   max-height: 70vh;
   border-radius: var(--border-radius-lg);
