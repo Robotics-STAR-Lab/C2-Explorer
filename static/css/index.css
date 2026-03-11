@@ -706,6 +706,37 @@ hit.teaser-video-item {
   display: block;
 }
 
+.bmk-speed-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.bmk-speed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--background-accent);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+
+.bmk-drone-icon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  opacity: 0.6;
+}
+
+.bmk-speed-badge .fa-bolt {
+  color: #F59E0B;
+}
+
 /* Drone count sub-selector */
 .bmk-drone-tabs {
   display: flex;
