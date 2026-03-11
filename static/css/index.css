@@ -314,11 +314,14 @@ body {
 }
 
 .publication-subtitle {
-  max-width: 980px;
-  margin: 0 auto 1.6rem;
-  font-size: clamp(1.05rem, 1.6vw, 1.7rem);
+  width: min(80vw, 1100px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1.6rem;
+  font-size: clamp(1.3rem, 1.85vw, 1.9rem);
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .publication-banner {
@@ -413,6 +416,15 @@ body {
 .author-block {
   display: inline-block;
   margin-right: 0.5rem;
+}
+
+.authors-primary .author-block {
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: default;
+}
+
+.authors-primary .author-block:hover {
+  transform: scale(1.15);
 }
 
 .publication-banner img {
