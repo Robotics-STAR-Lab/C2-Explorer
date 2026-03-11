@@ -280,10 +280,10 @@ body {
 }
 
 .teaser-intro {
-  max-width: 980px;
+  max-width: 820px;
   margin: 0 auto 2.5rem;
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
-  line-height: 1.6;
+  font-size: clamp(0.95rem, 0.85rem + 0.47vw, 1.1rem);
+  line-height: 1.75;
   color: #334155;
 }
 
@@ -358,7 +358,7 @@ body {
 }
 
 .motiv-subtitle {
-  color: #FFD700;
+  color: #F4A460;
 }
 
 .contrib-subtitle {
@@ -516,7 +516,7 @@ body {
   gap: 1.2rem;
   background: var(--background-primary);
   border: 1px solid var(--border-color);
-  border-left: 4px solid var(--primary-color);
+  border-left: 4px solid #87CEEB;
   border-radius: var(--border-radius);
   padding: 1.2rem 1.5rem;
   box-shadow: var(--shadow-sm);
@@ -651,6 +651,145 @@ body {
   box-shadow: var(--shadow-md);
   background: #000;
   display: block;
+}
+
+/* Drone count sub-selector */
+.bmk-drone-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.6rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.bmk-drone-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-right: 0.3rem;
+}
+
+.bmk-drone-tab {
+  padding: 0.28rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.bmk-drone-tab:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.bmk-drone-tab.is-active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Performance comparison table */
+.bmk-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  margin-top: 0.5rem;
+}
+
+.bmk-perf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: var(--background-primary);
+}
+
+.bmk-perf-table thead tr {
+  background: var(--background-accent);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.bmk-perf-table thead th {
+  padding: 0.85rem 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+}
+
+.bmk-perf-table thead th:first-child {
+  text-align: center;
+}
+
+.bmk-perf-table tbody td {
+  padding: 0.8rem 1.3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.bmk-perf-table tbody td:first-child {
+  text-align: center;
+}
+
+.bmk-perf-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Ours row highlight */
+.bmk-row-ours td {
+  background: #FFF0F5;
+  color: var(--text-primary) !important;
+  vertical-align: middle;
+}
+
+/* Second-best cell */
+.bmk-cell-second {
+  text-decoration: underline;
+  text-decoration-color: #F08080;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Improvement percentage */
+.bmk-pct {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #CD5C5C;
+  margin-top: 0.15rem;
+}
+
+/* Method name colors in table */
+.bmk-method-ours  { color: var(--primary-color); }
+.bmk-method-racer { color: #FFA500; }
+.bmk-method-fame  { color: #FFD700; }
+
+/* Table legend */
+.bmk-table-legend {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-align: right;
+  padding: 0.45rem 1rem;
+  background: var(--background-accent);
+  border-top: 1px solid var(--border-color);
+  margin: 0 !important;
+}
+
+.bmk-legend-second {
+  text-decoration: underline;
+  text-decoration-color: #F08080;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 600;
 }
 /* ── end Benchmark Comparison ── */
 

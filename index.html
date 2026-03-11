@@ -346,8 +346,8 @@
         <div class="contrib-item contrib-item-clickable" onclick="openMotivVideo('static/videos/contribution2.mp4')">
           <span class="contrib-index">02</span>
           <div class="contrib-content">
-            <p class="contrib-heading">Contiguity-Driven Allocation Formulation <i class="fas fa-play motiv-play-hint"></i></p>
-            <p>We introduce a graph-based neighborhood penalty to discourage non-adjacent task assignments, promoting spatiotemporally contiguous allocation sequences over time.</p>
+            <p class="contrib-heading">Contiguity-Driven Task Allocation <i class="fas fa-play motiv-play-hint"></i></p>
+            <p>We introduce a contiguity-driven allocation formulation with a graph-based neighborhood penalty to discourage non-adjacent task assignments, promoting spatiotemporally contiguous allocation sequences over time.</p>
           </div>
         </div>
         <div class="contrib-item contrib-item-clickable" onclick="document.getElementById('benchmark').scrollIntoView({behavior:'smooth'})">
@@ -406,6 +406,32 @@
           <source src="static/videos/bmk/FAME_CUBICLE.mp4" type="video/mp4">
         </video>
       </div>
+    </div>
+
+    <!-- Drone count selector -->
+    <div class="bmk-drone-tabs">
+      <button class="bmk-drone-tab is-active" data-drones="2">2 Drones</button>
+      <button class="bmk-drone-tab" data-drones="3">3 Drones</button>
+      <button class="bmk-drone-tab" data-drones="4">4 Drones</button>
+    </div>
+
+    <!-- Performance comparison table -->
+    <div class="bmk-table-wrap">
+      <table class="bmk-perf-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Exploration Time (s)</th>
+            <th>Total Path Length (m)</th>
+            <th>Flight Vel. (m/s)</th>
+          </tr>
+        </thead>
+        <tbody id="bmk-table-body">
+        </tbody>
+      </table>
+      <p class="bmk-table-legend">
+        <strong>bold</strong> = best &nbsp;·&nbsp; <span class="bmk-legend-second">underline</span> = 2nd best
+      </p>
     </div>
   </div>
 </section>
