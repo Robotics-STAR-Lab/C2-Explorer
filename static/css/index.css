@@ -292,7 +292,7 @@ body {
   padding: 0;
 }
 
-.teaser-video-item {
+hit.teaser-video-item {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
@@ -449,6 +449,59 @@ body {
 
 .motiv-card:hover .motiv-play-hint {
   color: var(--primary-color);
+}
+
+.motiv-card-1:hover .motiv-play-hint {
+  color: #DEB887;
+}
+
+.motiv-card-2:hover .motiv-play-hint {
+  color: #778899;
+}
+
+.motiv-click-hint {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  transition: var(--transition);
+}
+
+.motiv-card:hover .motiv-click-hint,
+.contrib-item-clickable:hover .motiv-click-hint {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.motiv-card-1 .motiv-click-hint {
+  color: #DEB887;
+  background: rgba(222, 184, 135, 0.1);
+  border-color: rgba(222, 184, 135, 0.35);
+}
+
+.motiv-card-1:hover .motiv-click-hint {
+  background: #DEB887;
+  color: #fff;
+  border-color: #DEB887;
+}
+
+.motiv-card-2 .motiv-click-hint {
+  color: #778899;
+  background: rgba(119, 136, 153, 0.1);
+  border-color: rgba(119, 136, 153, 0.35);
+}
+
+.motiv-card-2:hover .motiv-click-hint {
+  background: #778899;
+  color: #fff;
+  border-color: #778899;
 }
 
 /* Motivation video modal */
