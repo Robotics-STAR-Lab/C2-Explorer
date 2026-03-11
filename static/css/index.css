@@ -240,6 +240,16 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.lab-logos a {
+  outline: none;
+  display: inline-flex;
+}
+
+.lab-logos a:focus,
+.lab-logos a:focus-visible {
+  outline: none;
+}
+
 .lab-logo {
   height: 50px;
   width: auto;
@@ -323,6 +333,246 @@ body {
   line-height: 1.35;
   font-weight: 700;
 }
+
+/* ── Motivations & Contributions ── */
+.motiv-contrib-section {
+  background: var(--background-secondary);
+}
+
+.motiv-contrib-title {
+  margin-bottom: 2.5rem !important;
+}
+
+.motiv-contrib-block {
+  margin-bottom: 2.5rem;
+}
+
+.motiv-contrib-subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.motiv-subtitle {
+  color: #FFD700;
+}
+
+.contrib-subtitle {
+  color: #1E90FF;
+}
+
+/* Motivation cards */
+.motiv-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+@media (max-width: 640px) {
+  .motiv-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.motiv-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.3rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.motiv-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+}
+
+.motiv-card-1:hover {
+  border-color: #DEB887;
+}
+
+.motiv-card-2:hover {
+  border-color: #778899;
+}
+
+.motiv-card-icon {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.motiv-card-icon-1 {
+  background: linear-gradient(135deg, #f5ead8, #edd9b5);
+  color: #DEB887;
+}
+
+.motiv-card-icon-2 {
+  background: linear-gradient(135deg, #dde2e8, #c4ccd6);
+  color: #778899;
+}
+
+.motiv-card-heading {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem !important;
+}
+
+.motiv-card-body p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Contribution list */
+.motiv-play-hint {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  transition: color 0.2s ease;
+}
+
+.motiv-card:hover .motiv-play-hint {
+  color: var(--primary-color);
+}
+
+/* Motivation video modal */
+.motiv-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.motiv-modal.is-active {
+  display: flex;
+}
+
+.motiv-modal-inner {
+  position: relative;
+  width: min(800px, 80vw);
+  background: #000;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.motiv-modal-inner video {
+  display: block;
+  width: 100%;
+  max-height:80vh;
+}
+
+.motiv-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.2s ease;
+}
+
+.motiv-modal-close:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* end motivation video modal */
+
+.contrib-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contrib-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 1.2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.contrib-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.contrib-index {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--border-color);
+  line-height: 1;
+  min-width: 2rem;
+}
+
+.contrib-heading {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem !important;
+}
+
+.contrib-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contrib-item-clickable {
+  cursor: pointer;
+}
+
+.contrib-item-clickable:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+  border-left-color: var(--primary-color);
+}
+
+.contrib-item-clickable .motiv-play-hint {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  transition: color 0.2s ease;
+}
+
+.contrib-item-clickable:hover .motiv-play-hint {
+  color: var(--primary-color);
+}
+
+/* end contribution video modal */
 
 .publication-banner {
   max-height: 70vh;

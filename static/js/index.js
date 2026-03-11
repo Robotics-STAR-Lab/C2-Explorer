@@ -36,6 +36,31 @@ function copyBibTeX() {
     }
 }
 
+// Motivation video modal
+function openMotivVideo(src) {
+  const modal = document.getElementById('motiv-video-modal');
+  const source = document.getElementById('motiv-modal-source');
+  const video = document.getElementById('motiv-modal-video');
+  source.src = src;
+  video.load();
+  video.play();
+  modal.classList.add('is-active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMotivVideo(event) {
+  if (event && event.target !== event.currentTarget) return;
+  const modal = document.getElementById('motiv-video-modal');
+  const video = document.getElementById('motiv-modal-video');
+  video.pause();
+  modal.classList.remove('is-active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMotivVideo();
+});
+
 // Scroll to top functionality
 function scrollToTop() {
     window.scrollTo({
