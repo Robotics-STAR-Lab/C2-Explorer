@@ -165,30 +165,52 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Motivation video modal
-function openMotivVideo(src) {
-  const modal = document.getElementById('motiv-video-modal');
-  const source = document.getElementById('motiv-modal-source');
-  const video = document.getElementById('motiv-modal-video');
+// Motivation video accordion (cards grid – shared panel below the grid)
+function toggleMotivCard(card, src) {
+  const panel = document.getElementById('motiv-cards-panel');
+  const videoEl = panel.querySelector('video');
+  const source = panel.querySelector('source');
+  const allCards = document.querySelectorAll('.motiv-cards .motiv-card');
+  const isActive = card.classList.contains('is-active');
+
+  allCards.forEach(c => c.classList.remove('is-active'));
+
+  if (isActive) {
+    panel.classList.remove('is-open');
+    videoEl.pause();
+    return;
+  }
+
+  card.classList.add('is-active');
   source.src = src;
-  video.load();
-  video.play();
-  modal.classList.add('is-active');
-  document.body.style.overflow = 'hidden';
+  videoEl.load();
+  panel.classList.add('is-open');
+  videoEl.play().catch(() => {});
 }
 
-function closeMotivVideo(event) {
-  if (event && event.target !== event.currentTarget) return;
-  const modal = document.getElementById('motiv-video-modal');
-  const video = document.getElementById('motiv-modal-video');
-  video.pause();
-  modal.classList.remove('is-active');
-  document.body.style.overflow = '';
-}
+// Contribution item accordion
+function toggleContribItem(item) {
+  const accordion = item.closest('.contrib-accordion');
+  const panel = accordion.querySelector('.motiv-inline-video');
+  const videoEl = panel.querySelector('video');
+  const isActive = item.classList.contains('is-active');
 
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeMotivVideo();
-});
+  // Close all open contrib accordions
+  document.querySelectorAll('.contrib-accordion .contrib-item').forEach(i => {
+    i.classList.remove('is-active');
+    const p = i.closest('.contrib-accordion').querySelector('.motiv-inline-video');
+    if (p) {
+      p.querySelector('video').pause();
+      p.classList.remove('is-open');
+    }
+  });
+
+  if (!isActive) {
+    item.classList.add('is-active');
+    panel.classList.add('is-open');
+    videoEl.play().catch(() => {});
+  }
+}
 
 // Scroll to top functionality
 function scrollToTop() {

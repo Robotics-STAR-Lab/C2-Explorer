@@ -315,20 +315,23 @@
     <div class="motiv-contrib-block">
       <h3 class="motiv-contrib-subtitle motiv-subtitle"><i class="fas fa-lightbulb"></i> Motivations</h3>
       <div class="motiv-cards">
-        <div class="motiv-card motiv-card-1" onclick="openMotivVideo('static/videos/motivation1.mp4')">
+        <div class="motiv-card motiv-card-1" onclick="toggleMotivCard(this, 'static/videos/motivation1.mp4')">
           <div class="motiv-card-icon motiv-card-icon-1"><i class="fas fa-project-diagram"></i></div>
           <div class="motiv-card-body">
-            <p class="motiv-card-heading">Inadequate Task Representation <i class="fas fa-play motiv-play-hint"></i><span class="motiv-click-hint">click</span></p>
+            <p class="motiv-card-heading">Inadequate Task Representation <i class="fas fa-chevron-down motiv-play-hint motiv-chevron"></i><span class="motiv-click-hint">click</span></p>
             <p>Topology-agnostic representation overlooks the underlying connectivity of the regions.</p>
           </div>
         </div>
-        <div class="motiv-card motiv-card-2" onclick="openMotivVideo('static/videos/motivation2.mp4')">
+        <div class="motiv-card motiv-card-2" onclick="toggleMotivCard(this, 'static/videos/motivation2.mp4')">
           <div class="motiv-card-icon motiv-card-icon-2"><i class="fas fa-route"></i></div>
           <div class="motiv-card-body">
-            <p class="motiv-card-heading">Non-Contiguous Task Assignment <i class="fas fa-play motiv-play-hint"></i><span class="motiv-click-hint">click</span></p>
+            <p class="motiv-card-heading">Non-Contiguous Task Assignment <i class="fas fa-chevron-down motiv-play-hint motiv-chevron"></i><span class="motiv-click-hint">click</span></p>
             <p>Existing allocation strategies often fail to consider spatiotemporal contiguity.</p>
           </div>
         </div>
+      </div>
+      <div class="motiv-inline-video" id="motiv-cards-panel">
+        <video controls playsinline><source src="" type="video/mp4"></video>
       </div>
     </div>
 
@@ -336,18 +339,28 @@
     <div class="motiv-contrib-block">
       <h3 class="motiv-contrib-subtitle contrib-subtitle"><i class="fas fa-star"></i> Contributions</h3>
       <div class="contrib-list">
-        <div class="contrib-item contrib-item-clickable" onclick="openMotivVideo('static/videos/contribution1.mp4')">
-          <span class="contrib-index">01</span>
-          <div class="contrib-content">
-            <p class="contrib-heading">Connectivity-Aware Task Representation <i class="fas fa-play motiv-play-hint"></i><span class="motiv-click-hint">click</span></p>
-            <p>We construct a connectivity graph that decomposes disconnected unknown regions into independent task units, enabling flexible and communication-efficient task management.</p>
+        <div class="contrib-accordion">
+          <div class="contrib-item contrib-item-clickable" onclick="toggleContribItem(this)">
+            <span class="contrib-index">01</span>
+            <div class="contrib-content">
+              <p class="contrib-heading">Connectivity-Aware Task Representation <i class="fas fa-chevron-down motiv-play-hint motiv-chevron"></i><span class="motiv-click-hint">click</span></p>
+              <p>We construct a connectivity graph that decomposes disconnected unknown regions into independent task units, enabling flexible and communication-efficient task management.</p>
+            </div>
+          </div>
+          <div class="motiv-inline-video">
+            <video controls playsinline><source src="static/videos/contribution1.mp4" type="video/mp4"></video>
           </div>
         </div>
-        <div class="contrib-item contrib-item-clickable" onclick="openMotivVideo('static/videos/contribution2.mp4')">
-          <span class="contrib-index">02</span>
-          <div class="contrib-content">
-            <p class="contrib-heading">Contiguity-Driven Task Allocation <i class="fas fa-play motiv-play-hint"></i><span class="motiv-click-hint">click</span></p>
-            <p>We introduce a contiguity-driven allocation formulation with a graph-based neighborhood penalty to discourage non-adjacent task assignments, promoting spatiotemporally contiguous allocation sequences over time.</p>
+        <div class="contrib-accordion">
+          <div class="contrib-item contrib-item-clickable" onclick="toggleContribItem(this)">
+            <span class="contrib-index">02</span>
+            <div class="contrib-content">
+              <p class="contrib-heading">Contiguity-Driven Task Allocation <i class="fas fa-chevron-down motiv-play-hint motiv-chevron"></i><span class="motiv-click-hint">click</span></p>
+              <p>We introduce a contiguity-driven allocation formulation with a graph-based neighborhood penalty to discourage non-adjacent task assignments, promoting spatiotemporally contiguous allocation sequences over time.</p>
+            </div>
+          </div>
+          <div class="motiv-inline-video">
+            <video controls playsinline><source src="static/videos/contribution2.mp4" type="video/mp4"></video>
           </div>
         </div>
         <div class="contrib-item contrib-item-clickable" onclick="document.getElementById('benchmark').scrollIntoView({behavior:'smooth'})">
@@ -362,17 +375,6 @@
   </div>
 </section>
 <!-- End Motivations & Contributions -->
-
-<!-- Motivation Video Modal -->
-<div id="motiv-video-modal" class="motiv-modal" onclick="closeMotivVideo(event)">
-  <div class="motiv-modal-inner">
-    <button class="motiv-modal-close" onclick="closeMotivVideo()" aria-label="Close">&times;</button>
-    <video id="motiv-modal-video" controls playsinline>
-      <source id="motiv-modal-source" src="" type="video/mp4">
-    </video>
-  </div>
-</div>
-<!-- End Motivation Video Modal -->
 
 <!-- Benchmark Comparison -->
 <section class="section" id="benchmark">

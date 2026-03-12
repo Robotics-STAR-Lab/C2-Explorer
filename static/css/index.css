@@ -504,58 +504,63 @@ hit.teaser-video-item {
   border-color: #778899;
 }
 
-/* Motivation video modal */
-.motiv-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-}
-
-.motiv-modal.is-active {
-  display: flex;
-}
-
-.motiv-modal-inner {
-  position: relative;
-  width: min(800px, 80vw);
-  background: #000;
-  border-radius: var(--border-radius-lg);
+/* Inline accordion video panel */
+.motiv-inline-video {
   overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  max-height: 0;
+  margin-top: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), margin 0.45s ease;
+  border-radius: var(--border-radius);
 }
 
-.motiv-modal-inner video {
-  display: block;
+.motiv-inline-video.is-open {
+  max-height: 600px;
+  margin-top: 0.8rem;
+}
+
+.motiv-inline-video video {
   width: 100%;
-  max-height:80vh;
+  display: block;
+  border-radius: var(--border-radius);
+  background: #000;
+  box-shadow: var(--shadow-md);
 }
 
-.motiv-modal-close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.8rem;
-  background: rgba(255,255,255,0.15);
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1;
-  transition: background 0.2s ease;
+/* Active / expanded state for cards and contrib items */
+.motiv-card.is-active {
+  box-shadow: var(--shadow-md);
 }
 
-.motiv-modal-close:hover {
-  background: rgba(255,255,255,0.35);
+.motiv-card-1.is-active {
+  border-color: #DEB887 !important;
 }
 
-/* end motivation video modal */
+.motiv-card-2.is-active {
+  border-color: #778899 !important;
+}
+
+.contrib-item.is-active {
+  border-left-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+/* Chevron rotation on expand */
+.motiv-chevron {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.motiv-card.is-active .motiv-chevron,
+.contrib-item.is-active .motiv-chevron {
+  transform: rotate(180deg);
+}
+
+/* contrib accordion wrapper */
+.contrib-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+/* end accordion video panel */
 
 .contrib-list {
   display: flex;
