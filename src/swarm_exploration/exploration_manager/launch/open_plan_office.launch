@@ -1,0 +1,221 @@
+<launch>
+
+  <!-- Global odom prefix -->
+  <arg name="odom_prefix" value="/lidar_slam/odom" />
+  <arg name="drone_num" default="4"/>
+
+  <arg name="resolution" value="0.1" />
+  <arg name="lidar_pitch" value="$(eval 0 * 3.1415926 / 180.0)" />
+
+  <arg name="map_model" default="open_plan_office"/>
+
+  <arg name="max_vel" value="2.0" />
+  <arg name="max_acc" value="2.0" />
+
+  <arg name="sensor_pose_topic" default="pcl_render_node/sensor_pose"/>
+  <arg name="depth_topic" default="pcl_render_node/depth"/>
+  <arg name="cloud_topic" default="pcl_render_node/cloud"/>
+
+  <!-- Map generation -->
+  <node pkg ="map_generator" name ="map_pub" type ="map_pub" output = "screen" args="$(find map_generator)/resource/$(arg map_model).pcd">
+      <param name="add_boundary" value="1" />
+      <param name="is_bridge" value="0" />
+      <param name="downsample_res" value="$(arg resolution)" />
+      <param name="map_offset_x" value="0.0" />
+      <param name="map_offset_y" value="0.0" />
+      <param name="map_offset_z" value="0.0" />
+  </node>
+
+
+  <!-- Drone 1: Always launched (drone_num >= 1) -->
+  <group ns="quad_1" if="$(eval arg('drone_num') >= 1)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+        <arg name="drone_id" value="1"/>
+
+        <arg name="init_x"   value="5"/>
+        <arg name="init_y"   value="1"/>
+        <arg name="init_z"   value="1"/>
+        <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+
+        <arg name="drone_num" value="$(arg drone_num)"/>
+        <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+        <arg name="simulation" default="true"/>
+
+        <arg name="max_vel" value="$(arg max_vel)"/>
+        <arg name="max_acc" value="$(arg max_acc)"/>
+
+        <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+        <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+        <arg name="depth_topic" value="$(arg depth_topic)"/>
+        <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+        <!-- red -->
+        <arg name="color_r" value="1.0"/>
+        <arg name="color_g" value="0.0"/>
+        <arg name="color_b" value="0.0"/>
+      </include>
+  </group>
+
+  <!-- Drone 2: Launched when drone_num >= 2 -->
+  <group ns="quad_2" if="$(eval arg('drone_num') >= 2)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+      <arg name="drone_id" value="2"/>
+
+      <arg name="init_x"   value="3"/>
+      <arg name="init_y"   value="1"/>
+      <arg name="init_z"   value="1"/>
+      <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" default="true"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+      <!-- brown -->
+      <arg name="color_r" value="0.55"/>
+      <arg name="color_g" value="0.27"/>
+      <arg name="color_b" value="0.007"/>
+    </include>
+  </group>
+
+  <!-- Drone 3: Launched when drone_num >= 3 -->
+  <group ns="quad_3" if="$(eval arg('drone_num') >= 3)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+      <arg name="drone_id" value="3"/>
+
+      <arg name="init_x"   value="5"/>
+      <arg name="init_y"   value="-1"/>
+      <arg name="init_z"   value="1"/>
+      <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" default="true"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+      <!-- green -->
+      <arg name="color_r" value="0.0"/>
+      <arg name="color_g" value="0.5"/>
+      <arg name="color_b" value="0.0"/>
+    </include>
+  </group>
+
+  <!-- Drone 4: Launched when drone_num >= 4 -->
+  <group ns="quad_4" if="$(eval arg('drone_num') >= 4)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+      <arg name="drone_id" value="4"/>
+
+      <arg name="init_x"   value="3"/>
+      <arg name="init_y"   value="-1"/>
+      <arg name="init_z"   value="1"/>
+      <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" default="true"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+      <!-- blue -->
+      <arg name="color_r" value="0.0"/>
+      <arg name="color_g" value="0.0"/>
+      <arg name="color_b" value="0.7"/>
+    </include>
+  </group>
+
+  <!-- Drone 5: Launched when drone_num >= 5 -->
+  <group ns="quad_5" if="$(eval arg('drone_num') >= 5)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+      <arg name="drone_id" value="5"/>
+
+      <arg name="init_x"   value="0"/>
+      <arg name="init_y"   value="-1"/>
+      <arg name="init_z"   value="1"/>
+      <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" default="true"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+      <!-- purple -->
+      <arg name="color_r" value="0.6"/>
+      <arg name="color_g" value="0.0"/>
+      <arg name="color_b" value="0.8"/>
+    </include>
+  </group>
+
+  <!-- Drone 6: Launched when drone_num >= 6 -->
+  <group ns="quad_6" if="$(eval arg('drone_num') >= 6)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+      <arg name="drone_id" value="6"/>
+
+      <arg name="init_x"   value="0"/>
+      <arg name="init_y"   value="0"/>
+      <arg name="init_z"   value="1"/>
+      <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" default="true"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+      <!-- cyan -->
+      <arg name="color_r" value="0.0"/>
+      <arg name="color_g" value="0.8"/>
+      <arg name="color_b" value="0.8"/>
+    </include>
+  </group>
+
+  <!-- Drone 7: Launched when drone_num >= 7 -->
+  <group ns="quad_7" if="$(eval arg('drone_num') >= 7)">
+    <include file="$(find exploration_manager)/launch/single_drone_exploration.xml">
+      <arg name="drone_id" value="7"/>
+
+      <arg name="init_x"   value="0"/>
+      <arg name="init_y"   value="1"/>
+      <arg name="init_z"   value="1"/>
+      <arg name="init_yaw" value="0.0" />
+        <arg name="map_model" value="$(arg map_model)"/>
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" default="true"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+      <!-- orange -->
+      <arg name="color_r" value="1.0"/>
+      <arg name="color_g" value="0.5"/>
+      <arg name="color_b" value="0.0"/>
+    </include>
+  </group>
+
+</launch>

@@ -1,0 +1,979 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 0
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Drone11
+        - /Drone11/Exploration1
+        - /Drone11/Exploration1/global tour1/Namespaces1
+        - /Drone11/virtualground1/Autocompute Value Bounds1
+        - /Drone21
+        - /Drone21/Exploration1
+        - /Drone21/Exploration1/global tour1/Namespaces1
+        - /Drone21/virtualground1/Autocompute Value Bounds1
+        - /Drone21/local map1/Autocompute Value Bounds1
+        - /Drone31/Exploration1
+        - /Drone31/Exploration1/grid tour1/Namespaces1
+        - /Drone31/virtual ground1/Autocompute Value Bounds1
+        - /Drone41
+        - /Drone41/Exploration1
+        - /Drone41/Exploration1/grid tour1/Namespaces1
+        - /Drone41/virtual ground1/Autocompute Value Bounds1
+        - /Drone41/local map1/Autocompute Value Bounds1
+      Splitter Ratio: 0.5181347131729126
+    Tree Height: 1487
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.5886790156364441
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+      - /ThirdPersonFollower1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Name: Time
+    SyncMode: 0
+    SyncSource: local map
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 1
+      Class: rviz/Axes
+      Enabled: true
+      Length: 1
+      Name: Axes
+      Radius: 0.05000000074505806
+      Reference Frame: <Fixed Frame>
+      Show Trail: false
+      Value: true
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: false
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 20
+      Reference Frame: <Fixed Frame>
+      Value: false
+    - Alpha: 0.05000000074505806
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 161; 161; 161
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: global_map
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.10000000149011612
+      Style: Flat Squares
+      Topic: /map_generator/global_cloud_no_boundary
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Class: rviz/Group
+      Displays:
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_1/odom_visualization/robot
+              Name: robot1
+              Namespaces:
+                mesh: true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /quad_1/planning/position_cmd_vis_1
+              Name: FOV
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: model1
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/frontier_1
+              Name: frontier
+              Namespaces:
+                {}
+              Queue Size: 10000
+              Value: false
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /planning_vis/hgrid_1
+              Name: global tour
+              Namespaces:
+                center_hull_centers: true
+                center_hulls: true
+                grid_tour: true
+                partition: true
+                partition_explored: false
+              Queue Size: 1000
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/connectivity_graph_1
+              Name: ConGraph
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+            - Alpha: 1
+              Axes Length: 0.5
+              Axes Radius: 0.20000000298023224
+              Class: rviz/Pose
+              Color: 255; 25; 0
+              Enabled: false
+              Head Length: 0.30000001192092896
+              Head Radius: 0.10000000149011612
+              Name: next goal
+              Queue Size: 10
+              Shaft Length: 1
+              Shaft Radius: 0.05000000074505806
+              Shape: Axes
+              Topic: /planning_vis/pose_1
+              Unreliable: false
+              Value: false
+          Enabled: true
+          Name: Exploration
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_1/planning/travel_traj_1
+              Name: traj
+              Namespaces:
+                "": true
+              Queue Size: 100
+              Value: true
+            - Alpha: 1
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 10
+                Min Value: -10
+                Value: true
+              Axis: Z
+              Channel Name: intensity
+              Class: rviz/PointCloud2
+              Color: 255; 255; 255
+              Color Transformer: RGB8
+              Decay Time: 0
+              Enabled: false
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Min Color: 0; 0; 0
+              Name: traj_vel
+              Position Transformer: XYZ
+              Queue Size: 10
+              Selectable: true
+              Size (Pixels): 3
+              Size (m): 0.5
+              Style: Spheres
+              Topic: /quad_1/planning/travel_traj_vel_1
+              Unreliable: false
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: false
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/trajectory_1
+              Name: bspline
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: Trajectory
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 255; 255; 255
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 255; 255; 255
+          Min Color: 0; 0; 0
+          Name: virtualground
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 3
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/virtual_ground_1
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1.25
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 114; 159; 207
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 0; 0; 0
+          Min Color: 0; 0; 0
+          Name: local map
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 15
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/occupancy_all_1
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+      Enabled: true
+      Name: Drone1
+    - Class: rviz/Group
+      Displays:
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_2/odom_visualization/robot
+              Name: robot2
+              Namespaces:
+                mesh: true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /quad_2/planning/position_cmd_vis_2
+              Name: FOV2
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: model2
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/frontier_2
+              Name: frontier
+              Namespaces:
+                {}
+              Queue Size: 10000
+              Value: false
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /planning_vis/hgrid_2
+              Name: global tour
+              Namespaces:
+                center_hull_centers: true
+                center_hulls: true
+                grid_tour: true
+                partition: true
+                partition_explored: false
+              Queue Size: 1000
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/connectivity_graph_2
+              Name: ConGraph
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+            - Alpha: 1
+              Axes Length: 0.5
+              Axes Radius: 0.20000000298023224
+              Class: rviz/Pose
+              Color: 255; 25; 0
+              Enabled: false
+              Head Length: 0.30000001192092896
+              Head Radius: 0.10000000149011612
+              Name: next goal
+              Queue Size: 10
+              Shaft Length: 1
+              Shaft Radius: 0.05000000074505806
+              Shape: Axes
+              Topic: /planning_vis/pose_2
+              Unreliable: false
+              Value: false
+          Enabled: true
+          Name: Exploration
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_2/planning/travel_traj_2
+              Name: traj
+              Namespaces:
+                "": true
+              Queue Size: 100
+              Value: true
+            - Alpha: 1
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 10
+                Min Value: -10
+                Value: true
+              Axis: Z
+              Channel Name: intensity
+              Class: rviz/PointCloud2
+              Color: 255; 255; 255
+              Color Transformer: RGB8
+              Decay Time: 0
+              Enabled: false
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Min Color: 0; 0; 0
+              Name: traj_vel
+              Position Transformer: XYZ
+              Queue Size: 10
+              Selectable: true
+              Size (Pixels): 3
+              Size (m): 0.5
+              Style: Spheres
+              Topic: /quad_2/planning/travel_traj_vel_2
+              Unreliable: false
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: false
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/trajectory_2
+              Name: bspline
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: Trajectory
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 255; 255; 255
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 255; 255; 255
+          Min Color: 0; 0; 0
+          Name: virtualground
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 3
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/virtual_ground_2
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1.25
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 116; 116; 116
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 0; 0; 0
+          Min Color: 0; 0; 0
+          Name: local map
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 15
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/occupancy_all_2
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+      Enabled: true
+      Name: Drone2
+    - Class: rviz/Group
+      Displays:
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_3/odom_visualization/robot
+              Name: robot3
+              Namespaces:
+                mesh: true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /quad_3/planning/position_cmd_vis_3
+              Name: FOV3
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: model3
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/frontier_3
+              Name: frontier
+              Namespaces:
+                {}
+              Queue Size: 10000
+              Value: false
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /planning_vis/hgrid_3
+              Name: grid tour
+              Namespaces:
+                center_hull_centers: true
+                center_hulls: true
+                grid_tour: true
+                partition: true
+                partition_explored: false
+              Queue Size: 1000
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/connectivity_graph_3
+              Name: ConGraph
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+            - Alpha: 1
+              Axes Length: 0.5
+              Axes Radius: 0.20000000298023224
+              Class: rviz/Pose
+              Color: 255; 25; 0
+              Enabled: true
+              Head Length: 0.30000001192092896
+              Head Radius: 0.10000000149011612
+              Name: next goal
+              Queue Size: 10
+              Shaft Length: 1
+              Shaft Radius: 0.05000000074505806
+              Shape: Axes
+              Topic: /planning_vis/pose_3
+              Unreliable: false
+              Value: true
+          Enabled: true
+          Name: Exploration
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/trajectory_3
+              Name: bspline
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_3/planning/travel_traj_3
+              Name: traj
+              Namespaces:
+                "": true
+              Queue Size: 100
+              Value: true
+          Enabled: true
+          Name: Trajectory
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 255; 255; 255
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 255; 255; 255
+          Min Color: 0; 0; 0
+          Name: virtual ground
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 3
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/virtual_ground_3
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1.25
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 116; 116; 116
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 0; 0; 0
+          Min Color: 0; 0; 0
+          Name: local map
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 15
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/occupancy_all_3
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+      Enabled: true
+      Name: Drone3
+    - Class: rviz/Group
+      Displays:
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_4/odom_visualization/robot
+              Name: robot4
+              Namespaces:
+                mesh: true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /quad_4/planning/position_cmd_vis_4
+              Name: FOV4
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: model4
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/frontier_4
+              Name: frontier
+              Namespaces:
+                {}
+              Queue Size: 10000
+              Value: false
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /planning_vis/hgrid_4
+              Name: grid tour
+              Namespaces:
+                center_hull_centers: true
+                center_hulls: true
+                grid_tour: true
+                partition: true
+                partition_explored: false
+              Queue Size: 1000
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/connectivity_graph_4
+              Name: ConGraph
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+            - Alpha: 1
+              Axes Length: 0.5
+              Axes Radius: 0.20000000298023224
+              Class: rviz/Pose
+              Color: 255; 25; 0
+              Enabled: false
+              Head Length: 0.30000001192092896
+              Head Radius: 0.10000000149011612
+              Name: next goal
+              Queue Size: 10
+              Shaft Length: 1
+              Shaft Radius: 0.05000000074505806
+              Shape: Axes
+              Topic: /planning_vis/pose_4
+              Unreliable: false
+              Value: false
+          Enabled: true
+          Name: Exploration
+        - Class: rviz/Group
+          Displays:
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /quad_4/planning/travel_traj_4
+              Name: traj
+              Namespaces:
+                "": true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: false
+              Marker Topic: /planning_vis/trajectory_4
+              Name: bspline
+              Namespaces:
+                {}
+              Queue Size: 100
+              Value: false
+          Enabled: true
+          Name: Trajectory
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 255; 255; 255
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 255; 255; 255
+          Min Color: 0; 0; 0
+          Name: virtual ground
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 3
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/virtual_ground_4
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 1.25
+            Min Value: -2
+            Value: false
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/PointCloud2
+          Color: 116; 116; 116
+          Color Transformer: AxisColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 0; 0; 0
+          Min Color: 0; 0; 0
+          Name: local map
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: true
+          Size (Pixels): 15
+          Size (m): 0.125
+          Style: Flat Squares
+          Topic: /sdf_map/occupancy_all_4
+          Unreliable: false
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+      Enabled: true
+      Name: Drone4
+  Enabled: true
+  Global Options:
+    Background Color: 255; 255; 255
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
+      Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/ThirdPersonFollower
+      Distance: 54.69991683959961
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Field of View: 0.7853981852531433
+      Focal Point:
+        X: -11.544376373291016
+        Y: 0.1988902986049652
+        Z: -2.665272040758282e-05
+      Focal Shape Fixed Size: false
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 1.5697963237762451
+      Target Frame: <Fixed Frame>
+      Yaw: 3.129180669784546
+    Saved:
+      - Class: rviz/ThirdPersonFollower
+        Distance: 17.48538589477539
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -16.308002471923828
+          Y: 0.4492051601409912
+          Z: 8.589673598180525e-06
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.0347968339920044
+        Target Frame: <Fixed Frame>
+        Yaw: 3.150407314300537
+      - Class: rviz/ThirdPersonFollower
+        Distance: 19.123916625976562
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -15.817055702209473
+          Y: 0.35073214769363403
+          Z: -1.7929305613506585e-05
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.0997971296310425
+        Target Frame: <Fixed Frame>
+        Yaw: 3.180875539779663
+      - Class: rviz/ThirdPersonFollower
+        Distance: 9.999999046325684
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: 9.5367431640625e-07
+          Y: 4.76837158203125e-07
+          Z: -4.76837158203125e-07
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.7853982448577881
+        Target Frame: <Fixed Frame>
+        Yaw: 0.7853981852531433
+      - Class: rviz/ThirdPersonFollower
+        Distance: 13.322423934936523
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -17.527679443359375
+          Y: 0.041922301054000854
+          Z: 0
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.2603977918624878
+        Target Frame: <Fixed Frame>
+        Yaw: -3.092780113220215
+      - Class: rviz/ThirdPersonFollower
+        Distance: 19.042842864990234
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -3.295128345489502
+          Y: -0.8763042092323303
+          Z: -4.364534106571227e-05
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.3547965288162231
+        Target Frame: <Fixed Frame>
+        Yaw: 3.1553592681884766
+      - Class: rviz/ThirdPersonFollower
+        Distance: 36.06861877441406
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -7.0944743156433105
+          Y: 0.9173825979232788
+          Z: 1.132038414652925e-05
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.4897955656051636
+        Target Frame: <Fixed Frame>
+        Yaw: 3.113563060760498
+      - Class: rviz/ThirdPersonFollower
+        Distance: 51.915740966796875
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -10.095361709594727
+          Y: -2.4396560192108154
+          Z: -2.9445065592881292e-05
+        Focal Shape Fixed Size: false
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.5697963237762451
+        Target Frame: <Fixed Frame>
+        Yaw: 3.1422412395477295
+      - Class: rviz/ThirdPersonFollower
+        Distance: 32.70331954956055
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -7.894296646118164
+          Y: -0.9777646064758301
+          Z: -2.6584042643662542e-05
+        Focal Shape Fixed Size: false
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.5697963237762451
+        Target Frame: <Fixed Frame>
+        Yaw: 3.1254236698150635
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 2230
+  Hide Left Dock: false
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd0000000400000000000003c70000081afc0200000010fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e0000063d0000018200fffffffb0000000a0056006900650077007301000006b7000001d10000013200fffffffb0000000c0049006d00610067006500310100000534000000160000000000000000fb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006100000001d1000000b50000000000000000fb0000000a00640065007000740068000000032a000000b80000000000000000fb0000000a0049006d0061006700650100000415000000f80000000000000000fb0000000a0049006d00610067006501000003f4000001190000000000000000fb0000000a0049006d0061006700650100000385000001c90000000000000000fb0000000a0049006d0061006700650000000476000000d80000000000000000000000010000010f00000385fc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000006100000003bfc0100000002fb0000000800540069006d00650000000000000006100000077d00fffffffb0000000800540069006d0065010000000000000450000000000000000000000c2d0000081a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 4096
+  X: 0
+  Y: 0

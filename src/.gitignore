@@ -1,0 +1,15 @@
+devel/
+build/
+
+# LKH solver generated files
+*.par
+*.tour
+*.atsp
+*.tsp
+
+
+# Ignore .txt files under MARSIM/cascadePID/data
+MARSIM/cascadePID/data/*.txt
+
+.catkin_workspaces
+.vscode/

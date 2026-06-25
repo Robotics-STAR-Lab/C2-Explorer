@@ -1,0 +1,50 @@
+<launch>
+  <!-- Each machine runs one drone with its own drone_id. -->
+
+  <arg name="drone_id"/>
+  <arg name="drone_num" default="3"/>
+  <arg name="broadcast_ip" default="192.168.0.255"/>
+
+  <arg name="simulation" default="false"/>
+  <arg name="map_model" default="open_plan_office"/>
+
+  <arg name="max_vel" value="0.7"/>
+  <arg name="max_acc" value="1.0"/>
+
+  <arg name="odom_prefix" value="/High_Freq_Odometry"/>
+  <arg name="cloud_topic" default="/cloud_registered"/>
+  <arg name="sensor_pose_topic" default="pcl_render_node/sensor_pose"/>
+  <arg name="depth_topic" default="pcl_render_node/depth"/>
+
+  <arg name="lidar_pitch" value="0.0"/>
+
+  <arg name="color_r" default="$(eval {1:1.0, 2:0.55, 3:0.0}.get(int(arg('drone_id')), 0.0))"/>
+  <arg name="color_g" default="$(eval {1:0.0, 2:0.27, 3:0.5}.get(int(arg('drone_id')), 0.5))"/>
+  <arg name="color_b" default="$(eval {1:0.0, 2:0.007, 3:0.0}.get(int(arg('drone_id')), 0.0))"/>
+
+  <group ns="quad_$(arg drone_id)">
+    <include file="$(find exploration_manager)/launch/real_outdoor_exploration.xml">
+      <arg name="drone_id" value="$(arg drone_id)"/>
+      <arg name="drone_num" value="$(arg drone_num)"/>
+
+      <arg name="map_model" value="$(arg map_model)"/>
+
+      <arg name="max_vel" value="$(arg max_vel)"/>
+      <arg name="max_acc" value="$(arg max_acc)"/>
+
+      <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+      <arg name="simulation" value="$(arg simulation)"/>
+
+      <arg name="odom_prefix" value="$(arg odom_prefix)"/>
+      <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+      <arg name="depth_topic" value="$(arg depth_topic)"/>
+      <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+
+      <arg name="color_r" value="$(arg color_r)"/>
+      <arg name="color_g" value="$(arg color_g)"/>
+      <arg name="color_b" value="$(arg color_b)"/>
+
+      <arg name="broadcast_ip" value="$(arg broadcast_ip)"/>
+    </include>
+  </group>
+</launch>

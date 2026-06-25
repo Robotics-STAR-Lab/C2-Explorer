@@ -9,7 +9,7 @@
   </strong> -->
   <!-- <br> -->
   <p align="center">
-    Xinlu Yan<sup>1,*</sup>,
+    <a href="https://tracylucia.github.io/" target="_blank">Xinlu Yan</a><sup>1,*</sup>,
     <a href="https://zager-zhang.github.io" target="_blank">Mingjie Zhang</a><sup>2,3,*</sup>,
     Yuhao Fang<sup>1</sup>,
     Yanke Sun<sup>1</sup>,
@@ -26,10 +26,10 @@
   <a href="https://www.bilibili.com/video/BV1U5N3zgE4p/?share_source=copy_web&amp;vd_source=1801a551da967e1db6162c2de1380d70" target="_blank"><img alt="Video" src="https://img.shields.io/badge/Video-Bilibili-FB7299?logo=bilibili&amp;logoColor=white"/></a>
   <a href="https://robotics-star.com/C2-Explorer/" target="_blank"><img alt="Project Page" src="https://img.shields.io/badge/Project_Page-Website-4A90E2?logo=googlechrome&logoColor=white"/></a>
   <br/>
-  <p><em>Code will be released upon acceptance.</em></p>
+
 </div>
 
-<p align="center">
+<p align="center" style="margin-top: 18px;">
   <img src="assets/img/cover.jpg" width="100%"/>
 </p>
 
@@ -37,25 +37,90 @@
   C<sup>2</sup>-Explorer is a <strong><em>decentralized</em></strong> multi-UAV exploration framework to enhance <strong><em>flexible</em></strong> and <strong><em>contiguous</em></strong> task allocation.
 </p>
 
-## Motivations and Contributions
+## 📢 News
 
-<p align="center">
-  <img src="assets/video/mov&con.gif" width="80%"/>
-</p>
+- **[26/06/2026]**: 👩‍💻 Release the main algorithm of C<sup>2</sup>-Explorer.
+- **[16/06/2026]**: 🎉 C<sup>2</sup>-Explorer is conditionally accepted to IROS 2026.
 
-## Real-World Experiments
+## 🤖 Real-World Experiments
 
 <p align="center">
   <img src="assets/video/real-world.gif" width="80%"/>
 </p>
 
-## Benchmark Comparisons
+## 🛠️ Installation
 
-<p align="center">
-  <img src="assets/video/bmk.gif" width="80%"/>
-</p>
+### Prerequisites
 
-## Citation 📜
+This repository is organized as a ROS1 catkin workspace and is primarily tested with:
+
+- ROS Noetic (Ubuntu 20.04) or ROS Melodic (Ubuntu 18.04)
+- PCL
+- Eigen
+
+#### For NLopt
+
+```bash
+git clone -b v2.7.1 https://github.com/stevengj/nlopt.git
+cd nlopt
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
+
+#### For LKH
+
+```bash
+wget http://akira.ruc.dk/~keld/research/LKH-3/LKH-3.0.6.tgz
+tar xvfz LKH-3.0.6.tgz
+cd LKH-3.0.6
+make
+sudo cp LKH /usr/local/bin
+```
+
+#### For MARSIM
+
+```bash
+sudo apt update
+sudo apt install libglfw3-dev libglew-dev
+```
+
+### Compilation
+<!-- 开源的时候换成：https://github.com/Robotics-STAR-Lab/C2-Explorer.git-->
+
+```bash
+cd ${YOUR_WORKSPACE_PATH}
+git clone https://github.com/TracyLucia/ContiguousExpl.git
+catkin_make
+```
+
+## 🚀 Quick Start
+
+Launch RViz in one terminal:
+
+```bash
+source ./devel/setup.bash
+roslaunch exploration_manager rviz.launch
+```
+
+Launch the simulator in another terminal:
+
+```bash
+source ./devel/setup.bash
+roslaunch exploration_manager open_plan_office.launch
+```
+
+### Note
+
+- Trigger with the `2D Nav Goal` in Rviz when the terminal displays `wait for trigger`.
+
+- You can replace `open_plan_office` with other maps. We provide another two test scenarios: `cubicle_office`, `octa_maze`.
+
+- If you want to use your own `.pcd`, place the file under `src/MARSIM/map_generator/resource` and add the corresponding `.yaml` file under `src/swarm_exploration/exploration_manager/config/maps`.
+
+## ✒️ Citation 
 
 ```bibtex
 @misc{yan2026c2explorer,
@@ -68,3 +133,12 @@
       url={https://arxiv.org/abs/2603.07699}, 
 }
 ```
+
+## 🤓 Acknowledgments
+
+We would like to express our gratitude to the following projects, which have provided significant support and inspiration for our work:
+
+- [FALCON](https://github.com/HKUST-Aerial-Robotics/FALCON): An efficient framework for fast UAV exploration, from which our method for constructing topological maps draws inspiration.
+- [RACER](https://github.com/SYSU-STAR/RACER): A Rapid Exploration Framework for Multiple UAVs.
+- [FUEL](https://github.com/HKUST-Aerial-Robotics/FUEL): An Efficient Framework for Fast UAV Exploration.
+- [MARSIM](https://github.com/hku-mars/MARSIM): A Light-weight Point-realistic Simulator for LiDAR-based UAVs.

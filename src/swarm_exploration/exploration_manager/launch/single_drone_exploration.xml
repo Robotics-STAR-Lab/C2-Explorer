@@ -1,0 +1,113 @@
+<launch>
+    <arg name="drone_id" default="1"/>
+    <arg name="drone_num" default="1"/> 
+
+
+    <arg name="init_x" default="0"/>
+    <arg name="init_y" default="0"/>
+    <arg name="init_z" default="0"/> 
+    <arg name="init_yaw" default="0.0" />
+
+
+    <arg name="resolution" default="0.1"/>
+    <arg name="lidar_pitch" default="0.0"/>
+
+    <arg name="color_r" default="0.0"/>
+    <arg name="color_g" default="1.0"/>
+    <arg name="color_b" default="1.0"/>
+
+    <arg name="use_gpu" default="true"/>
+    <arg name="simulation" default="true"/>
+
+    <arg name="odom_prefix" default="odom"/>
+    <arg name="odometry_topic" default="$(arg odom_prefix)_$(arg drone_id)"/>
+
+    <arg name="sensor_pose_topic"/> 
+    <arg name="depth_topic"/> 
+    <arg name="cloud_topic"/>
+
+    <arg name="max_vel"/>
+    <arg name="max_acc"/>
+
+    <arg name="map_model" default="forest_50x50_01_200"/>
+
+  <!-- main algorithm params -->
+  <include file="$(find exploration_manager)/launch/single_drone_planner.xml">
+    <arg name="drone_id" value="$(arg drone_id)"/>
+    <arg name="drone_num" value="$(arg drone_num)"/>
+
+    <arg name="max_vel" value="$(arg max_vel)" /> 
+    <arg name="max_acc" value="$(arg max_acc)" />
+
+    <arg name="odometry_topic" value="$(arg odometry_topic)"/>
+    <arg name="sensor_pose_topic" value="$(arg sensor_pose_topic)"/>
+    <arg name="depth_topic" value="$(arg depth_topic)"/>
+    <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+
+    <arg name="lidar_pitch" value="$(arg lidar_pitch)"/>
+    <arg name="simulation" value="$(arg simulation)"/>
+
+    <arg name="map_model" value="$(arg map_model)"/>
+
+    <arg name="color_r" value="$(arg color_r)"/>
+    <arg name="color_g" value="$(arg color_g)"/>
+    <arg name="color_b" value="$(arg color_b)"/>
+  </include>
+
+
+  <!-- trajectory server -->
+  <node pkg="plan_manage" name="traj_server_$(arg drone_id)" type="traj_server" output="screen">
+    <!-- simulation mode -->
+    <remap from="/odom_world" to="$(arg odom_prefix)_$(arg drone_id)" if="$(arg simulation)"/>
+    <remap from="/position_cmd" to="planning/pos_cmd_$(arg drone_id)" if="$(arg simulation)"/>
+    
+    <remap from="planning/bspline" to="/planning/bspline_$(arg drone_id)" />
+    <remap from="planning/replan" to="/planning/replan_$(arg drone_id)" />
+    <remap from="planning/new" to="/planning/new_$(arg drone_id)" />
+    
+    <remap from="planning/position_cmd_vis" to="planning/position_cmd_vis_$(arg drone_id)" />
+    <remap from="planning/travel_traj" to="planning/travel_traj_$(arg drone_id)" />
+    <remap from="planning/travel_traj_vel" to="planning/travel_traj_vel_$(arg drone_id)" />
+
+    <param name="traj_server/time_forward" value="1.5" type="double"/>
+    <param name="traj_server/pub_traj_id" value="4" type="int"/>
+    <param name="traj_server/pub_traj_vel_id" value="4" type="int"/>
+    <param name="traj_server/drone_id" value="$(arg drone_id)" type="int"/>
+    <param name="traj_server/drone_num" value="$(arg drone_num)" type="int"/>
+    <param name="traj_server/max_vel" value="2.0" type="double"/>
+    
+    <param name="perception_utils/lidar_pitch" value="$(arg lidar_pitch)" />
+    <param name="perception_utils/lidar_top_angle" value="$(eval 38 * 3.1415926 / 180.0)" type="double"/>
+    <param name="perception_utils/lidar_bottom_angle" value="$(eval 8 * 3.1415926 / 180.0)" type="double"/>
+    <param name="perception_utils/lidar_left_angle" value="$(eval 60 * 3.1415926 / 180.0)" type="double"/>
+    <param name="perception_utils/lidar_right_angle" value="$(eval 60 * 3.1415926 / 180.0)" type="double"/>
+    <param name="perception_utils/lidar_max_dist" value="22.0" type="double"/>
+    <param name="perception_utils/lidar_vis_dist" value="1.0" type="double"/>
+    
+    <param name="color_r" value="$(arg color_r)"/>
+    <param name="color_g" value="$(arg color_g)"/>
+    <param name="color_b" value="$(arg color_b)"/>
+    <param name="color_a" value="1.0"/>
+  </node>
+
+  <!-- use simulator -->
+  <include file="$(find exploration_manager)/launch/single_lidar_drone.xml">
+    <arg name="drone_id" value="$(arg drone_id)"/>
+    <arg name="drone_num" value="$(arg drone_num)"/>
+    <arg name="lidar_type" value="mid360" />
+    <arg name="init_x"   value="$(arg init_x)"/>
+    <arg name="init_y"   value="$(arg init_y)"/>
+    <arg name="init_z"   value="$(arg init_z)"/> 
+    <arg name="init_yaw" value="$(arg init_yaw)"/>
+    <arg name="downsample_resolution" value="$(arg resolution)" />
+    <arg name="odom_topic" value="$(arg odometry_topic)" />
+    <arg name="use_gpu" value="$(arg use_gpu)" />
+    <arg name="use_uav_extra_model_" value="1" />
+    <arg name="lidar_pitch" value="$(arg lidar_pitch)" />
+    
+    <arg name="color_r" value="$(arg color_r)"/>
+    <arg name="color_g" value="$(arg color_g)"/>
+    <arg name="color_b" value="$(arg color_b)"/>
+  </include>
+
+</launch>
