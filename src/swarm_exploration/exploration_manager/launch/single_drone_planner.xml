@@ -119,7 +119,7 @@
     <param name="fsm/opt_reject_backoff" value="0.8" type="double"/>
     <param name="fsm/opt_reject_backoff_max" value="2.5" type="double"/>
     <param name="fsm/repeat_send_num" value="1" type="int"/>
-    <param name="fsm/debug_opt_output" value="fasle" type="bool"/>
+    <param name="fsm/debug_opt_output" value="false" type="bool"/>
 
     <param name="color_r" value="$(arg color_r)"/>
     <param name="color_g" value="$(arg color_g)"/>
