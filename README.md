@@ -92,7 +92,7 @@ sudo apt install libglfw3-dev libglew-dev
 
 ```bash
 cd ${YOUR_WORKSPACE_PATH}
-git clone https://github.com/TracyLucia/ContiguousExpl.git
+git clone https://github.com/Robotics-STAR-Lab/C2-Explorer.git
 catkin_make
 ```
 
